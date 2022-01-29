@@ -1,7 +1,7 @@
-"""Aim: automate the process of solving puzzles Scroggs posts in Puzzle Village from his stickerbook webpage, i.e. http://mathoffstickerbook.com/sync/ehaftEyG7fPRFQE0ZJNG
+"""Aim: automate the process of solving puzzles Scroggs posts in Puzzle Village from his puzzle_solver webpage, i.e. http://mathoffstickerbook.com/sync/ehaftEyG7fPRFQE0ZJNG
 
-This script contains the main routine that solves the stickerbook puzzle"""
-from stickerbook.puzzle.utils import read_string, solve_puzzle
+This script contains the main routine that solves the puzzle_solver puzzle"""
+from puzzle_solver.puzzle.utils import read_string, solve_puzzle
 
 
 def solve_stickerbook_puzzle(puzzle_string: str) -> str:
