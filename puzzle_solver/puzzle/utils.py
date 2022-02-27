@@ -1,4 +1,4 @@
-"""Aim: automate the process of solving puzzles Scroggs posts in Puzzle Village from his puzzle_solver webpage,
+"""Aim: automate the process of solving puzzles Scroggs posts in Puzzle Village from his stickerbook webpage,
 i.e. http://mathoffstickerbook.com/sync/ehaftEyG7fPRFQE0ZJNG
 This script contains essential packages and functions the solver relies on."""
 import itertools
