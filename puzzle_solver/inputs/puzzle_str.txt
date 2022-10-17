@@ -1,6 +1,0 @@
-plus plus 11
-plus plus 17
-plus plus 17
-plus times 11
-times minus 17
-times plus 17

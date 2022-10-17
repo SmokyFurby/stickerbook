@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "stickerbook_puzzle_solver"
+version = "0.1.0"
+description = "Solving stickerbook puzzles, e.g. http://mathoffstickerbook.com/sync/ehaftEyG7fPRFQE0ZJNG"
+authors = ["Belgin <smokyfurby@gmail.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.23.5"
+click = "^8.1.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,30 +1,31 @@
-# Stickerbook
-Bot for solving puzzles, estimating expected spend on sticker packs, etc
+# Sticker book Solver
+Aim: automate the process of solving puzzles Matthew Scroggs posts in Puzzle Village from his puzzle_solver webpage, i.e. http://mathoffstickerbook.com/sync/ehaftEyG7fPRFQE0ZJNG
 
 ## Puzzle solver
+Currently, the solver is CLI-only.
 
 ### How to install
-Currently the tool is text-only.
+Clone the repo:
+```shell
+git clone https://github.com/SmokyFurby/stickerbook.git
+```
+E.g. if the repo folder is called ```stickerbook```, run
+```shell
+cd stickerbook
+```
 
-For those using PyCharm, Visual Studio, etc.
-- Clone the project from https://github.com/SmokyFurby/stickerbook.git
-- Install all packages in requirements.txt:
-  - PyCharm: click on requirements.txt to open it, right-click on one of the stated packages, then click on "Show Context Actions", then "Install plugins"
-  - Terminal: navigate to the requirements.txt, then "python -m pip install -r requirements.txt" ("py" instead of "python" for Windows PowerShell)
+then install the solver package with
+```shell
+pip install -e .
+```
 
 ### Inputting the desired puzzle
-Enter the 3 rows and 3 columns in ../stickerbook/inputs/puzzle_str.py, e.g. "plus plus 11" for a row or column saying: ? + ? + ? = 11
+Enter the 3 rows and 3 columns in your txt file e.g. "+ + 11" for a row or column saying: ? + ? + ? = 11
 
 ### How to run
+E.g. if the puzzle txt is at ```./example_puzzles/puzzle_str.txt```, 
 
-
-#### In your IDE
-For those using PyCharm, Visual Studio, etc.
-- Open this project in your IDE
-- Make sure your project has python installed and has created a virtual environment (usually in a "venv" folder)
-- Open ../stickerbook/puzzle/solver.py
-- Hit Shift+F10 or click on the run button
-
-#### In the terminal
-Coming soon!
-
+cd to repo folder (if not already) and run:
+```shell
+python ./scripts/main.py --puzzle_path="./example_puzzles/puzzle_str.txt"
+```
