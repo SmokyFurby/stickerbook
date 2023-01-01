@@ -15,7 +15,9 @@ jobs:
             set -e
             poetry install --with test --sync
             poetry run python --version
-            poetry run python -m pytest test
+            
+            mkdir test-results
+            poetry run python -m pytest test --junitxml=test-results/junit.xml
       - store_test_results:
           path: test-results
 
