@@ -67,7 +67,6 @@ class StickerbookPuzzleSolver:
             col3 = RowOrColumn().build_equation(c, self._puzzle[5][0], f, self._puzzle[5][1], i, self._puzzle[5][2])
 
             if all([row1, row2, row3, col1, col2, col3]):
-                print("The solution is:")
                 self._solution = np.array(perm).reshape((3, 3))
                 return self.solution_array_to_string()
 

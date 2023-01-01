@@ -18,4 +18,5 @@ def cli_app(puzzle_path: str):
 
     solved_puzzle = puzzle.solve()
 
+    print("The solution is:")
     print(solved_puzzle)

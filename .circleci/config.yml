@@ -1,0 +1,26 @@
+version: 2.1
+orbs:
+  python: circleci/python@2.1.1
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/python:3.11.0
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          name: Test
+          command: |
+            set -e
+            poetry install --with test --sync
+            poetry run python --version
+            poetry run python -m pytest test
+      - store_artifacts:
+          path: test-reports/
+          destination: stickerbook
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
