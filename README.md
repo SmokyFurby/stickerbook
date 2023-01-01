@@ -1,7 +1,7 @@
 # Sticker book puzzle solver
 Aim: automate the process of solving puzzles like this one:
 
-<img src="./attachments/puzzle.png" width="200" height="200" />
+<img src="https://raw.githubusercontent.com/SmokyFurby/stickerbook/main/attachments/puzzle.png" width="200" height="200" />
 
 ## About the family of puzzles
 The digits 1 to 9 need to be put in the boxes exactly once so that the six calculations are correct. The calculations are read left to right and top to bottom. Moreover, you should ignore the usual order of operations, so no BODMAS here.
@@ -77,7 +77,7 @@ The solve method outputs a string; the result from ```print(solved_puzzle)``` wo
 ```
 which tells you how to arrange the digits 1-9 to make all six equations in the puzzle correct. For this example, the digits would be filled in as follows:
 
-<img src="./attachments/puzzle_solved.png" width="200" height="200" />
+<img src="https://raw.githubusercontent.com/SmokyFurby/stickerbook/main/attachments/puzzle_solved.png" width="200" height="200" />
 
 ## Repo demonstration
 A demo script called ```scripts\main.py``` is included, showing how the class could be used in a simple CLI app.
