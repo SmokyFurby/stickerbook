@@ -3,7 +3,7 @@ import numpy as np
 
 from typing import List, Union
 
-from stickerbook_puzzle_solver.domain.equation_lhs import RowOrColumn
+from .equation_lhs import RowOrColumn
 
 
 class StickerbookPuzzleSolver:

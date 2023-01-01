@@ -17,11 +17,51 @@ jobs:
             poetry run python --version
             
             mkdir test-results
-            poetry run python -m pytest test --junitxml=test-results/junit.xml
+            poetry run python -m pytest --junitxml=test-results/junit.xml test
       - store_test_results:
           path: test-results
+  test-deploy:
+    docker:
+      - image: cimg/python:3.11.0
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          name: Test deploy
+          command: |
+            set -e
+            poetry install --with test --sync
+            poetry run python --version
+            
+            poetry config repositories.testpypi https://test.pypi.org/legacy/
+            poetry config pypi-token.testpypi $TEST_API_TOKEN
+            poetry publish --build -r testpypi
+  deploy:
+    docker:
+      - image: cimg/python:3.11.0
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          name: Deploy
+          command: |
+            set -e
+            poetry install --with test --sync
+            poetry run python --version
+            
+            poetry config pypi-token.pypi $API_TOKEN 
+            poetry publish --build
 
 workflows:
   main:
     jobs:
       - build-and-test
+  deploy:
+    jobs:
+      - build-and-test
+      - test-deploy:
+          context: smoky_env
+      - deploy:
+          context: smoky_env

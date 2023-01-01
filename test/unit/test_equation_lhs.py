@@ -1,6 +1,6 @@
 import unittest
 
-from stickerbook_puzzle_solver.domain.equation_lhs import RowOrColumn
+from stickerbook_puzzle_solver.equation_lhs import RowOrColumn
 
 
 class TestRowOrColumn(unittest.TestCase):

@@ -3,12 +3,12 @@ from pathlib import Path
 
 import numpy as np
 
-from stickerbook_puzzle_solver.domain.stickerbook_puzzle import StickerbookPuzzleSolver
+from stickerbook_puzzle_solver.stickerbook_puzzle import StickerbookPuzzleSolver
 
 
 class TestStickerbookPuzzleSolver(unittest.TestCase):
     def setUp(self) -> None:
-        self.puzzle_path = Path(__file__).parents[2].joinpath("common", "test_input.txt").as_posix()
+        self.puzzle_path = Path(__file__).parents[1].joinpath("common", "test_input.txt").as_posix()
 
         with open(self.puzzle_path, 'r') as reader:
             self.puzzle_string = reader.read()
