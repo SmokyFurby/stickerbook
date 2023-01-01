@@ -16,9 +16,8 @@ jobs:
             poetry install --with test --sync
             poetry run python --version
             poetry run python -m pytest test
-      - store_artifacts:
-          path: test-reports/
-          destination: stickerbook
+      - store_test_results:
+          path: test-results
 
 workflows:
   main:
