@@ -15,10 +15,13 @@ class TestStickerBook(TestCase):
         self.sut = StickerbookPuzzleSolver(puzzle_string)
 
     def test_should_solve_puzzle(self):
+        # arrange
+        expected = "6 3 2\n5 8 4\n1 7 9"
+
         # act
-        solved_puzzle = self.sut.solve()
+        actual = self.sut.solve()
 
         #assert
-        self.assertIsInstance(solved_puzzle, str)
+        self.assertIsInstance(actual, str)
 
-        self.assertEqual(solved_puzzle, "6 3 2\n5 8 4\n1 7 9")
+        self.assertEqual(actual, expected)
