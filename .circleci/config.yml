@@ -59,9 +59,19 @@ workflows:
     jobs:
       - build-and-test
   deploy:
+    when:
+      equal: [ main, << pipeline.git.branch >> ]
     jobs:
       - build-and-test
       - test-deploy:
           context: smoky_env
+          requires:
+            - build-and-test
+      - hold:
+          type: approval
+          requires:
+            - test-deploy
       - deploy:
           context: smoky_env
+          requires:
+            - hold
